@@ -7,14 +7,25 @@ function App() {
   const [comments, setComments] = useState([]);
 
   const addNewComment = (newComment) =>{
-    setComments([...comments, newComment]);
+    setComments([newComment, ...comments]);
+
 
   };
 
   return (
     <div>
-      <CommentsForm addNewComment = {addNewComment} /> 
+      <div>
+        <CommentsForm addNewComment = {addNewComment} /> 
+      </div>
+
+      <div>
+        <Comment parentComments = {comments}/>
+      </div>
+
+
     </div>
+
+    
 
   );
 }
