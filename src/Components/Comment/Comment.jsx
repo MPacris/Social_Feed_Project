@@ -1,8 +1,10 @@
-
-const Comment = (props) => {
+import React from 'react';
+const comments = (props) => {
   return ( 
+    <div>
 
+    </div>
    );
 }
-
-export default Comment;
+ 
+export default comments;
