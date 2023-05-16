@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Comment from '../Comment/Comment';
-import LikeDislike from '../LikeDislike/LikeDislike';
 
-
-
-const CommentsFeed = ({ parentComments }) => {
+const CommentsFeed = ({ parentComments, onLike, onDislike }) => {
   return (
     <div>
-      {parentComments.map((comment, index) => (
-        <Comment key={index} comment={comment} />
+      {parentComments.map((comment) => (
+        <Comment
+          key={comment.id}
+          comment={comment}
+          onLike={onLike}
+          onDislike={onDislike}
+        />
       ))}
     </div>
   );

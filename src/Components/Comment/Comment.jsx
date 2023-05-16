@@ -1,16 +1,21 @@
 import React from 'react';
 import LikeDislike from '../LikeDislike/LikeDislike';
 
-const Comment = ({ comment }) => {
+const Comment = ({ comment, onLike, onDislike }) => {
   const handleLike = () => {
-    comment.like = true;
-    comment.dislike = false;
+    onLike(comment.id);
   };
 
   const handleDislike = () => {
-    comment.like = false;
-    comment.dislike = true;
+    onDislike(comment.id);
   };
+
+  let likeStatus = 'inactive';
+  if (comment.like) {
+    likeStatus = 'like';
+  } else if (comment.dislike) {
+    likeStatus = 'dislike';
+  }
 
   return (
     <div className="commentfeed-container">
@@ -18,7 +23,7 @@ const Comment = ({ comment }) => {
       <div className="commentfeed-comment">{comment.comment}</div>
       <div className="commentfeed-actions">
         <LikeDislike
-          likeStatus={comment.like ? 'like' : comment.dislike ? 'dislike' : 'inactive'}
+          likeStatus={likeStatus}
           onLike={handleLike}
           onDislike={handleDislike}
         />
