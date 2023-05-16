@@ -1,21 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Comment from '../Comment/Comment';
 import LikeDislike from '../LikeDislike/LikeDislike';
 
-const CommentsFeed = (props) => {
+
+
+const CommentsFeed = ({ parentComments }) => {
   return (
-    <div className="">
-      {props.parentComments.map((newComment, index) => {
-        return (
-          <div key={index} className="commentfeed-container">
-            <div className="commentfeed-name">{newComment.name}</div>
-            <div className="commentfeed-comment">{newComment.comment}</div>
-            <div className="commentfeed-actions">
-              <LikeDislike comment={props.comment} />
-            </div>
-          </div>
-        );
-      })}
+    <div>
+      {parentComments.map((comment, index) => (
+        <Comment key={index} comment={comment} />
+      ))}
     </div>
   );
 };
