@@ -1,60 +1,38 @@
-import React, {useState, useEffect} from 'react';
-import './LikeDislike.css'
 
-const LikeDislike = (props) => {
+import './LikeDislike.css';
 
-    const [likeActive, setLikeActive] = useState(false);
-    const [dislikeActive, setDislikeActive] = useState(false);
+const LikeDislike = ({ likeStatus, onLike, onDislike }) => {
+  const handleLikeClick = () => {
+    onLike();
+  };
 
-    const [likeButtonClass, setLikeButtonClass] = useState('inactive');
-    const [dislikeButtonClass, setDislikeButtonClass] = useState('inactive');
+  const handleDislikeClick = () => {
+    onDislike();
+  };
 
+  let likeButtonClass = 'like-button';
+  let dislikeButtonClass = 'dislike-button';
 
-    const handleLikeClick = () => {
-        if (likeActive) {
-            setLikeActive(false);
-        } else {
-            setLikeActive(true);
-            setDislikeActive(false)
-        }
-    }
+  if (likeStatus === 'like') {
+    likeButtonClass += ' like-active';
+  } else if (likeStatus === 'dislike') {
+    dislikeButtonClass += ' dislike-active';
+  }
 
-    const handleDislikeClick = () => {
-        if (dislikeActive) {
-            setDislikeActive(false);
-        } else {
-            setDislikeActive(true);
-            setLikeActive(false);
-        }
-    }
-
-    useEffect(() => {
-        if(likeActive === true){
-            setLikeButtonClass('like-active')
-        } else if(likeActive === false) {
-            setLikeButtonClass('inactive')
-        }
-    }, [likeActive])
-
-    useEffect(() => {
-        if(dislikeActive === false){
-            setDislikeButtonClass('inactive')
-        } else {
-            setDislikeButtonClass('dislike-active')
-        }
-    }, [dislikeActive])
-
-
-    return (
-        <div className="button-container">
-            <div className='button-img'>
-                <button className={likeButtonClass} onClick={(e)=>handleLikeClick(e)}>Like</button>
-            </div>
-            <div>
-                <button className={dislikeButtonClass} onClick={(e)=>handleDislikeClick(e)}>Dislike</button>
-            </div>
-        </div>
-    )
-}
+  return (
+    <div className="button-container">
+      <div className="button-img">
+        <button className={likeButtonClass} onClick={handleLikeClick}>
+          <i className="fas fa-thumbs-up"></i> Like
+        </button>
+      </div>
+      <div>
+        <button className={dislikeButtonClass} onClick={handleDislikeClick}>
+          <i className="fas fa-thumbs-down"></i> Dislike
+        </button>
+      </div>
+    </div>
+  );
+};
 
 export default LikeDislike;

@@ -24,7 +24,7 @@ function App() {
   const addNewComment = (newComment) => {
     const newId = comments.length + 1;
     newComment.id = newId;
-    setComments((prevComments) => [newComment, ...prevComments]);
+    setComments((prevComments) => [...prevComments, newComment]);
   };
 
   const handleLike = (id) => {

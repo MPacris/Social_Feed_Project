@@ -1,6 +1,6 @@
 import React from 'react';
 import LikeDislike from '../LikeDislike/LikeDislike';
-import './Comment.css'
+import './Comment.css';
 
 const Comment = ({ comment, onLike, onDislike }) => {
   const handleLike = () => {

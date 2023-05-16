@@ -22,19 +22,18 @@ const CommentsForm = ({ addNewComment }) => {
     };
   
     return (
-      <form onSubmit={handleSubmit}>
-        <div className="form-container">
+      <form onSubmit={handleSubmit} className='form-container'>
           <div className='form-top-container'>
-            <label>Name</label>
+            <label className='name-label'>Name</label>
             <input
+              className='name-box'
               type="text"
               value={name}
-              onChange={(event) => setName(event.target.value)}
-            />
+              onChange={(event) => setName(event.target.value)}/>
           </div>
-  
+
           <div className='form-bottom-container'>
-            <div>
+
             <label className='comment-label'>Comment</label>
             <input
               className='comment-box'
@@ -42,14 +41,12 @@ const CommentsForm = ({ addNewComment }) => {
               value={comment}
               onChange={(event) => setComment(event.target.value)}
             />
-            </div>
-         
-  
-          <div>
+          </div>
+
+   
             <button type="submit" className='form-button'>Create</button>
-          </div>
-          </div>
-          </div>
+
+
       </form>
     );
   };

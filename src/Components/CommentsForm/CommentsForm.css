@@ -1,15 +1,10 @@
-
 .form-container {
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .form-top-container{
-    display: flex;
-    flex-direction: flex-start;
-}
-
-.form-bottom-container{
     display: flex;
     flex-direction: row;
     position: relative;
@@ -17,21 +12,35 @@
 
 }
 
-.form-button{
-position: absolute;
-bottom: 0;
-right: 0;
-}
-
-.comment-box{
-    width: 325px;
-    height: 97px;
-  
-}
-
-.comment-label{
-    text-align: left;
+.name-label, .comment-label {
+    display: flex;
+    align-items: flex-start;
     vertical-align: top;
-    padding: .5em
-    ;
+    padding: 0.5em;
+    width: 80px; /* Adjust the width as needed */
+}
+
+
+
+.form-bottom-container{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    padding: 1em;
+
+}
+
+.form-button{
+    margin-left: auto;
+}
+
+.comment-box {
+    width: 350px;
+    height: 90px;
+}
+
+.name-box {
+    width: 350px;
+    height: 30px;
+
 }
