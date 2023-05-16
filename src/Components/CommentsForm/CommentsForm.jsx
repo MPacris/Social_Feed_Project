@@ -22,12 +22,12 @@ const CommentsForm = ({addNewComment}) => {
 
     return ( <form onSubmit={handleSubmit}>
     <div>
-        <label>name</label>
+        <label>Name</label>
         <input type='text' value = {name} onChange={(event) => setName(event.target.value)} />
     </div>
 
     <div>
-        <label>comment</label>
+        <label>Comment</label>
         <input type='text' value = {comment} onChange={(event) => setComment(event.target.value)} />
     </div>
 
