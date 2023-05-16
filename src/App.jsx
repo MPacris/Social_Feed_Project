@@ -9,6 +9,7 @@ function App() {
       id: 1,
       name: 'JJ Vega',
       comment: 'Its April Fools Day! Give this a dislike if you really like it. : )',
+      dateTime: '4/01/2023, 6:48:12 AM',
       like: false,
       dislike: false,
     },
@@ -16,6 +17,7 @@ function App() {
       id: 2,
       name: 'Nevin Seibel',
       comment: "My Rubik's cube is fully charged and ready for battle. Right after I eat my meal that has appeared from the magical hand from behind my curtain.",
+      dateTime: '4/01/2023, 6:58:12 AM',
       like: false,
       dislike: false,
     },
@@ -24,6 +26,7 @@ function App() {
   const addNewComment = (newComment) => {
     const newId = comments.length + 1;
     newComment.id = newId;
+    newComment.dateTime = new Date(); // Add the current date and time
     setComments((prevComments) => [...prevComments, newComment]);
   };
 
@@ -33,23 +36,23 @@ function App() {
         if (comment.id === id) {
           return {
             ...comment,
-            like: true,
-            dislike: false,
+            like: !comment.like, // Toggle the like status
+            dislike: false, // Reset the dislike status
           };
         }
         return comment;
       })
     );
   };
-
+  
   const handleDislike = (id) => {
     setComments((prevComments) =>
       prevComments.map((comment) => {
         if (comment.id === id) {
           return {
             ...comment,
-            like: false,
-            dislike: true,
+            like: false, // Reset the like status
+            dislike: !comment.dislike, // Toggle the dislike status
           };
         }
         return comment;

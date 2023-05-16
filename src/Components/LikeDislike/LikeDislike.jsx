@@ -1,4 +1,4 @@
-
+import React from 'react';
 import './LikeDislike.css';
 
 const LikeDislike = ({ likeStatus, onLike, onDislike }) => {

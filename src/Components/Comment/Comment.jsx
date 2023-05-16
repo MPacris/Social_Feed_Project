@@ -22,6 +22,7 @@ const Comment = ({ comment, onLike, onDislike }) => {
     <div className="comment-container">
       <div className="comment-name">{comment.name}</div>
       <div className="comment-comment">{comment.comment}</div>
+      <div className="comment-date">{comment.dateTime.toLocaleString()}</div> {/* Display the date and time */}
       <div className="comment-actions">
         <LikeDislike
           likeStatus={likeStatus}
