@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import './CommentsForm.css'
 
 
 const CommentsForm = ({ addNewComment }) => {
@@ -22,8 +23,8 @@ const CommentsForm = ({ addNewComment }) => {
   
     return (
       <form onSubmit={handleSubmit}>
-        <div className="container-form">
-          <div>
+        <div className="form-container">
+          <div className='form-top-container'>
             <label>Name</label>
             <input
               type="text"
@@ -32,19 +33,23 @@ const CommentsForm = ({ addNewComment }) => {
             />
           </div>
   
-          <div>
-            <label>Comment</label>
+          <div className='form-bottom-container'>
+            <div>
+            <label className='comment-label'>Comment</label>
             <input
+              className='comment-box'
               type="text"
               value={comment}
               onChange={(event) => setComment(event.target.value)}
             />
-          </div>
+            </div>
+         
   
           <div>
-            <button type="submit">Create</button>
+            <button type="submit" className='form-button'>Create</button>
           </div>
-        </div>
+          </div>
+          </div>
       </form>
     );
   };
