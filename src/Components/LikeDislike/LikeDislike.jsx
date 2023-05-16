@@ -46,7 +46,7 @@ const LikeDislike = (props) => {
 
 
     return (
-        <div className="button-wrapper">
+        <div className="button-container">
             <div className='button-img'>
                 <button className={likeButtonClass} onClick={(e)=>handleLikeClick(e)}>Like</button>
             </div>

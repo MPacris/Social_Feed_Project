@@ -1,5 +1,6 @@
 import React from 'react';
 import LikeDislike from '../LikeDislike/LikeDislike';
+import './Comment.css'
 
 const Comment = ({ comment, onLike, onDislike }) => {
   const handleLike = () => {
@@ -18,10 +19,10 @@ const Comment = ({ comment, onLike, onDislike }) => {
   }
 
   return (
-    <div className="commentfeed-container">
-      <div className="commentfeed-name">{comment.name}</div>
-      <div className="commentfeed-comment">{comment.comment}</div>
-      <div className="commentfeed-actions">
+    <div className="comment-container">
+      <div className="comment-name">{comment.name}</div>
+      <div className="comment-comment">{comment.comment}</div>
+      <div className="comment-actions">
         <LikeDislike
           likeStatus={likeStatus}
           onLike={handleLike}
