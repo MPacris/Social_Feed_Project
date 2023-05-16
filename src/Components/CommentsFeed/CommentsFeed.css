@@ -1,0 +1,31 @@
+.comments-feed{
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  
+  /* Name styling */
+  .commentfeed-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  /* Comment styling */
+  .commentfeed-comment {
+    margin-bottom: 5px;
+  }
+  
+  /* Like and dislike button positioning */
+  .commentfeed-actions {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  
+  /* Like and dislike button styling */
+  .post-actions button {
+    margin-left: 5px;
+  }

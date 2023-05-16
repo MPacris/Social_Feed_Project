@@ -1,29 +1,23 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Comment from '../Comment/Comment';
-
+import LikeDislike from '../LikeDislike/LikeDislike';
 
 const CommentsFeed = (props) => {
-
-    
-    return ( 
-        <table className="table">
-        <thead>
-
-        </thead>
-        <tbody>
-          {props.parentComments.map((newComment,index) => {
-            return(
-                <tr key= {index}>
-                  <tr><td>{newComment.name}</td></tr>
-                  <tr><td>{newComment.comment}</td></tr>
-                </tr>
-            );
-          })}
-        </tbody>
-      </table>
-
-
-     );
-}
+  return (
+    <div className="">
+      {props.parentComments.map((newComment, index) => {
+        return (
+          <div key={index} className="commentfeed-container">
+            <div className="commentfeed-name">{newComment.name}</div>
+            <div className="commentfeed-comment">{newComment.comment}</div>
+            <div className="commentfeed-actions">
+              <LikeDislike comment={props.comment} />
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
 
 export default CommentsFeed;

@@ -21,6 +21,8 @@ const CommentsForm = ({addNewComment}) => {
 
 
     return ( <form onSubmit={handleSubmit}>
+    <div className='container-form'>
+    
     <div>
         <label>Name</label>
         <input type='text' value = {name} onChange={(event) => setName(event.target.value)} />
@@ -33,6 +35,8 @@ const CommentsForm = ({addNewComment}) => {
 
     <div>
         <button type='submit'>Create</button>
+    </div>
+    
     </div>
 
     </form> 

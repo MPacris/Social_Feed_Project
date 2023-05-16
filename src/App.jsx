@@ -1,10 +1,24 @@
 import React, { useState } from "react";
 import CommentsForm from "./Components/CommentsForm/CommentsForm";
-import Comment from "./Components/Comment/Comment";
+
 import CommentsFeed from "./Components/CommentsFeed/CommentsFeed";
+import './App.css'
 
 function App() {
-  const [comments, setComments] = useState([]);
+  const [comments, setComments] = useState([{
+    name: 'JJ Vega', 
+    comment: 'Its April Fools Day! Give this a dislike if you really like it. : )',
+    like: false,
+    dislike: false,
+  
+  },
+  {
+    name: 'Nevin Seibel', 
+    comment: "My Rubik's cube is fully charged and ready for battle. Right after I eat my meal that has appeared from the magical hand from behind my curtain.",
+    like: false,
+    dislike: false,
+
+  }, ]);
 
   const addNewComment = (newComment) =>{
     setComments([newComment, ...comments]);
@@ -13,17 +27,15 @@ function App() {
   };
 
   return (
-    <div>
-      <div>
+    <div className="container-all">
+      <div className="container-top">
         <CommentsForm addNewComment = {addNewComment} /> 
       </div>
 
-      <div>
-        <Comment parentComments = {comments}/>
+      <div className="container-comments">
+        <CommentsFeed parentComments = {comments}/>
       </div>
-
-
-    </div>
+      </div>
 
     
 
